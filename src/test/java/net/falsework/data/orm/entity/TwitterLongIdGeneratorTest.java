@@ -9,14 +9,14 @@ import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
 
-public class LongIdGeneratorTest {
+public class TwitterLongIdGeneratorTest {
 
 	@Test
     public void testPerformance() {
         long avg = 0;
         for (int k = 0; k < 10; k++) {
             List<Callable<Long>> partitions = new ArrayList<Callable<Long>>();
-            final LongIdGenerator idGen = new LongIdGenerator();
+            final TwitterLongIdGenerator idGen = new TwitterLongIdGenerator();
             for (int i = 0; i < 1000000; i++) {
                 partitions.add(new Callable<Long>() {
                     @Override
@@ -42,14 +42,10 @@ public class LongIdGeneratorTest {
 	
 	@Test
     public void testNextId() {
-		 final LongIdGenerator idGen = new LongIdGenerator();
+		 final TwitterLongIdGenerator idGen = new TwitterLongIdGenerator();
          for (int i = 0; i < 100; i++) {
         	 System.out.println(idGen.nextId());
          }
-	}
-	@Test
-	public void test() {
-		System.out.println(1L<<60);
 	}
 
 }

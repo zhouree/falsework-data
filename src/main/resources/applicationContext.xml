@@ -32,7 +32,7 @@
 	<!-- 基于注解的事务管理 -->
 	<tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
 	
-	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager"
+	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager"
 		p:sessionFactory-ref="hibernateSessionFactory" />
 
 </beans>

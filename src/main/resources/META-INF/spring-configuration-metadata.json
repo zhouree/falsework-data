@@ -1,0 +1,92 @@
+{"properties": [
+  {
+    "name": "mybatis.typeHandlersPackage",
+    "type": "java.lang.String",
+    "description": "Packages to search for type handlers."
+  },
+  {
+    "name": "mybatis.typeAliasesPackage",
+    "type": "java.lang.String",
+    "description": "Packages to search for type aliases."
+  },
+  {
+    "name": "mybatis.mapperLocations",
+    "type": "java.lang.String",
+    "description": "Mybatis mapper Locations."
+  },
+  {
+    "name": "mybatis.configLocation",
+    "type": "java.lang.String",
+    "description": "Set the location of the MyBatis SqlSessionFactory config file. Default value is classpath:mybatis-configuration.xml"
+  },
+  {
+    "name": "mybatis.typeAliasesSuperType",
+    "type": "java.lang.String",
+    "description": "Super class which domain objects have to extend to have a type alias created."
+  },
+    {
+    "name": "hibernate.packagesToScan",
+    "type": "java.lang.String",
+    "description": "A description for 'hibernate.packagesToScan'"
+  },
+  {
+    "name": "hibernate.properties.dialect",
+    "type": "java.lang.String",
+    "description": "A description for 'hibernate.properties.dialect'"
+  },
+  {
+    "name": "hibernate.properties.show_sql",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.show_sql'"
+  },
+  {
+    "name": "hibernate.properties.format_sql",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.format_sql'"
+  },
+  {
+    "name": "hibernate.properties.order_updates",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.order_updates'"
+  },
+  {
+    "name": "hibernate.properties.generate_statistics",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.generate_statistics'"
+  },
+  {
+    "name": "hibernate.properties.cache.use_query_cache",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.cache.use_query_cache'"
+  },
+  {
+    "name": "hibernate.properties.cache.use_structured_entries",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.cache.use_structured_entries'"
+  },
+  {
+    "name": "hibernate.properties.cache.region.factory_class",
+    "type": "java.lang.String",
+    "description": "A description for 'hibernate.properties.cache.region.factory_class'"
+  },
+  {
+    "name": "hibernate.properties.temp.use_jdbc_metadata_defaults",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.temp.use_jdbc_metadata_defaults'"
+  },
+  {
+    "name": "hibernate.properties.cache.use_minimal_puts",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.cache.use_minimal_puts'"
+  },
+  {
+    "name": "hibernate.properties.cache.use_second_level_cache",
+    "type": "java.lang.Boolean",
+    "description": "A description for 'hibernate.properties.cache.use_second_level_cache'"
+  },
+  {
+    "name": "hibernate.properties.max_fetch_depth",
+    "type": "java.lang.String",
+    "description": "A description for 'hibernate.properties.max_fetch_depth'"
+  }
+]}

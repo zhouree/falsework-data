@@ -20,10 +20,7 @@
 		<setting name="jdbcTypeForNull" value="NULL" />
 		<setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString" />
 	</settings>
-	<typeAliases>
-		<typeAlias alias="Entity" type="me.andpay.ac.oss.core.orm.mybatis.MybatisEntity" />
-	</typeAliases>
 	<typeHandlers>
-		<typeHandler handler="me.andpay.ac.oss.core.orm.mybatis.EntityTypeHandler" />
+		<typeHandler handler="net.falsework.data.orm.mybatis.EntityHandler" />
 	</typeHandlers>
 </configuration>    

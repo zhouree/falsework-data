@@ -15,18 +15,18 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * 
+ * 实体类型默认类型转换器
  * @param <Entity>
  */
-@MappedTypes(value = { MybatisEntity.class })
+@MappedTypes(value = { TypeAliases.class })
 @MappedJdbcTypes(value = { JdbcType.BIGINT })
-public class EntityTypeHandler<Entity extends IdEntity> extends BaseTypeHandler<Entity> {
+public class EntityHandler<Entity extends IdEntity> extends BaseTypeHandler<Entity> {
 
 	protected Logger logger = LoggerFactory.getLogger(getClass());
 
 	private Class<Entity> type;
 	
-	public EntityTypeHandler(Class<Entity> type) {
+	public EntityHandler(Class<Entity> type) {
 		if (type == null)
 			throw new IllegalArgumentException("Type argument cannot be null");
 		this.type = type;
