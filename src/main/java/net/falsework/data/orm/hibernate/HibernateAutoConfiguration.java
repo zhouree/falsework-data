@@ -18,42 +18,41 @@ import org.springframework.core.io.support.ResourcePatternResolver;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 
+import net.falsework.data.orm.config.OrmProperties;
+
 @Configuration
 @ConditionalOnClass({ SessionFactory.class,HibernateTransactionManager.class})
-@EnableConfigurationProperties(HibernateProperties.class)
+@EnableConfigurationProperties(OrmProperties.class)
 @AutoConfigureAfter(DataSourceAutoConfiguration.class)
-public class HibernateAutoConfiguration {
+public class HibernateAutoConfiguration{
 
 	private static Logger logger = LoggerFactory.getLogger(HibernateAutoConfiguration.class);
 
 	@Autowired
-	private HibernateProperties hibernateProperties;
+	private OrmProperties properties;
 
 	@Bean
 	@ConditionalOnMissingBean
 	public SessionFactory sessionFactory(DataSource dataSource) throws Exception {
-		logger.info("Configuration Hibernate SessionFactory.");
 		ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
 		LocalSessionFactoryBuilder sfb = new LocalSessionFactoryBuilder(dataSource, resourcePatternResolver);
-
-		if (hibernateProperties.getProperties() != null) {
-			sfb.addProperties(hibernateProperties.getProperties());
+		if (properties.getHibernateProperties() != null) {
+			sfb.addProperties(properties.getHibernateProperties());
 		}
-
-		if (hibernateProperties.getPackagesToScan() != null) {
-			sfb.scanPackages(hibernateProperties.getPackagesToScan());
+		String packagesToScan = properties.getHibernatePackagesToScan();
+		if (packagesToScan != null) {
+			logger.info("Hibernate PackagesToScan:{}",packagesToScan);
+			sfb.scanPackages(packagesToScan);
 		}
 		// Build SessionFactory instance.
 		return sfb.buildSessionFactory();
-		
 	}
 	
-//	@Bean
-//	@ConditionalOnMissingBean
-//	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) throws Exception {
-//		logger.info("Configuration HibernateTransactionManager.");
-//		return new HibernateTransactionManager(sessionFactory);
-//		
-//	}
+	@Bean
+	@ConditionalOnMissingBean
+	public HibernateTransactionManager transactionManager(SessionFactory sessionFactory) throws Exception {
+		logger.info("Configuration HibernateTransactionManager.");
+		return new HibernateTransactionManager(sessionFactory);
+	}
 	
 }

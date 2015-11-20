@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "orm.base_packages",
+    "type": "java.lang.String",
+    "description": "Packages to search for type handlers ,type aliases,entities."
+  },
+  {
+    "name": "orm.mybatis",
+    "type": "java.util.Map",
+    "description": "Mybatis Properties."
+  },
+  {
+    "name": "orm.hibernate",
+    "type": "java.util.Map",
+    "description": "Hibernate Properties."
+  }
+]}
