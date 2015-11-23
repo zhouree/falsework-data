@@ -94,6 +94,7 @@ public class MybatisAutoConfiguration{
 		if(typeAliasesPackages!=null){
 			logger.info("MyBatis TypeAliasesPackages:{}",typeAliasesPackages);
 			factory.setTypeAliasesPackage(typeAliasesPackages);
+			factory.setTypeAliasesSuperType(TypeAliases.class);
 		}
 		//省略TypeHandler扫描，默认只用一个EntityHandler
 		//factory.setTypeHandlersPackage(this.properties.getPackagesToScan());

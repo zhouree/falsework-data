@@ -9,6 +9,9 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+
 /**
  * 统一定义id的entity基类.<br>
  * ID为Long型<br>
@@ -23,7 +26,17 @@ public abstract class IdEntity implements Serializable{
 	@GeneratedValue(generator = "longIdGenerator")
 	@GenericGenerator(name = "longIdGenerator", strategy = "net.falsework.data.orm.entity.LongIdGenerator")
 	protected Long id;
+	
+	public IdEntity() {
+		super();
+	}
+	
+	public IdEntity(Long id) {
+		super();
+		this.id = id;
+	}
 
+	@JsonSerialize(using=ToStringSerializer.class)
 	public Long getId() {
 		return id;
 	}
