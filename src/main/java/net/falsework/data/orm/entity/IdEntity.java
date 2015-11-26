@@ -9,9 +9,6 @@ import javax.persistence.MappedSuperclass;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-
 /**
  * 统一定义id的entity基类.<br>
  * ID为Long型<br>
@@ -36,7 +33,6 @@ public abstract class IdEntity implements Serializable{
 		this.id = id;
 	}
 
-	@JsonSerialize(using=ToStringSerializer.class)
 	public Long getId() {
 		return id;
 	}
